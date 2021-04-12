@@ -16,11 +16,12 @@ const isSameDiagonal = (src, dest) => {
     (diagonalDirectionTRBL[src] && diagonalDirectionTRBL[src][dest]))
 }
 
-// need to figure out how to check if the path is clear or not
-
+const isPathClean = (srcToDestPath, squares) => {
+ return  srcToDestPath.reduce((acc, curr) => !squares[curr] && acc, true)
+}
 module.exports = {
     isSameRow,
     isSameColumn,
     isSameDiagonal,
-    
+    isPathClean
 }
