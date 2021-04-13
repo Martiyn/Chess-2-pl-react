@@ -15,7 +15,7 @@ export default class King extends Piece {
           (src + 7 === dest && isSameDiagonal(src, dest)) ||
           (src - 1 === dest && isSameRow(src, dest)))
     }
-    getSrcToDestPath(src, dest) {
+    getSrcToDestPath() {
         return [];
     }
  }   
