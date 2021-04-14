@@ -4,6 +4,7 @@ import '../index.css';
 import Board from './board.js';
 import CapturedPiecesBlock from './captured-pieces-block.js';
 import initialiseChessBoard from '../init/game-initialiser.js';
+import King from '../pieces/king.js';
 
 export default class Game extends React.Component {
   constructor() {
@@ -67,13 +68,51 @@ export default class Game extends React.Component {
         squares[m] = squares[this.state.sourceSelection];
         squares[this.state.sourceSelection] = null;
 
-     
-      }
-    }
-  //need to add check and checkmate around here somewhere
+    
+    const isCheck = this.isCheckForPlayer(squares, this.state.player)
 
-  
-  render() 
+    if (isCheck) {
+      this.setState( oldState => ({
+        status: "Wrong selection. You are in check!",
+        sourceSelection: -1,
+      }))
+    } else {
+      let player = this.state.player === 1 ? 2 : 1;
+      let turn = this.state.turn === 'white' ? 'black' : 'white';
+
+      this.setState(oldState => ({
+        sourceSelection: -1,
+        squares,
+        whiteCapturedPieces: [...oldState.whiteCapturedPieces, ...whiteCapturedPieces],
+        blackCapturedPieces: [...oldState.blackCapturedPieces, ...blackCapturedPieces],
+        player,
+        status: '',
+        turn
+      }));
+    }
+  }
+  else {
+    this.setState({
+      status: "Wrong selection. Choose valid piece and destination.",
+      sourceSelection: -1,
+    });
+   }
+  }
+ }
+
+getKingPosition(squares, player) {
+return squares.reduce((acc, curr, m) =>
+  acc || ((curr && (curr.getPlayer() === player)) && (curr instanceof King) && m), null)
+}
+
+isCheckForPlayer(squares, player) {
+const opponent = player === 1 ? 2 : 1
+const playersKingPosition = this.getKingPosition(squares, player)
+const canPieceKillPlayersKing = (piece, m) => piece.isMovePossible(playersKingPosition, m, squares)
+return squares.reduce((acc, curr, idx) =>  acc || (curr && (curr.getPlayer() === opponent) && canPieceKillPlayersKing(curr, idx) && true), false)
+}
+
+  render() {
 
     return (
       <div>
@@ -100,8 +139,8 @@ export default class Game extends React.Component {
         </div>
       </div>
     );
-            }
-        }        
+  }
+}        
 
  
 
