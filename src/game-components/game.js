@@ -34,7 +34,7 @@ export default class Game extends React.Component {
         squares[m].style = { ...squares[m].style, backgroundColor: "lightblue" }; 
         this.setState({
           status: "Choose destination for the selected piece",
-          sourceSelection: i
+          sourceSelection: m
         })
       }
       return

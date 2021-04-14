@@ -42,14 +42,14 @@ body {
   }
   
   
-   .game-status, .captured-pieces-block {
+  .game-status, .captured-pieces-block{
     margin-top: 20px;
     min-height: 50px;
   }
   
   
   .dark-square{
-  background-color: rgb(48, 52, 54);
+  background-color: rgb(63, 52, 52);
   }
   
   .light-square{
