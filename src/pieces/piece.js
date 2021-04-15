@@ -5,6 +5,6 @@ export default class Piece {
     }
   
     getPlayer() {
-      return this.player
+      return this.player;
     }
   }

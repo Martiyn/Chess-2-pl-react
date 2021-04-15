@@ -13,12 +13,13 @@ const isSameColumn = (src, dest) => {
 
 const isSameDiagonal = (src, dest) => {
     return !!((diagonalDirectionTLBR[src] && diagonalDirectionTLBR[src][dest]) ||
-    (diagonalDirectionTRBL[src] && diagonalDirectionTRBL[src][dest]))
+    (diagonalDirectionTRBL[src] && diagonalDirectionTRBL[src][dest]));
 }
 
 const isPathClean = (srcToDestPath, squares) => {
- return  srcToDestPath.reduce((acc, curr) => !squares[curr] && acc, true) //need to fix this function, pieces go straight through each other
-}
+    return  srcToDestPath.reduce((acc, curr) => acc && !squares[curr], true); //need to fix this function, pieces go straight through each other
+   }
+
 module.exports = {
     isSameRow,
     isSameColumn,

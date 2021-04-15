@@ -14,7 +14,7 @@ export default class Knight extends Piece {
       (src - 15 === dest && !isSameRow(src, dest)) ||
       (src - 6 === dest && !isSameRow(src, dest)) ||
       (src + 10 === dest && !isSameRow(src, dest)) ||
-      (src + 17 === dest && !isSameRow(src, dest)))
+      (src + 17 === dest && !isSameRow(src, dest)));
   }
 
   getSrcToDestPath() {

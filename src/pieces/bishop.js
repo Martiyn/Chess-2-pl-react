@@ -7,7 +7,7 @@ export default class Bishop extends Piece {
   }
 
   isMovePossible(src, dest, squares) {
-    return isPathClean(this.getSrcToDestPath(src, dest), squares) && isSameDiagonal(src, dest)
+    return isPathClean(this.getSrcToDestPath(src, dest), squares) && isSameDiagonal(src, dest);
   }
 
   getSrcToDestPath(src, dest) {

@@ -69,7 +69,7 @@ export default class Game extends React.Component {
         squares[this.state.sourceSelection] = null;
 
     
-    const isCheck = this.isCheckForPlayer(squares, this.state.player)
+    const isCheck = this.isCheckForPlayer(squares, this.state.player);
 
     if (isCheck) {
       this.setState( oldState => ({
@@ -101,15 +101,15 @@ export default class Game extends React.Component {
  }
 
 getKingPosition(squares, player) {
-return squares.reduce((acc, curr, m) =>
-  acc || ((curr && (curr.getPlayer() === player)) && (curr instanceof King) && m), null)
+return squares.reduce((acc, curr, idx) =>
+  acc || ((curr && (curr.getPlayer() === player)) && (curr instanceof King) && idx), null);
 }
 
 isCheckForPlayer(squares, player) {
-const opponent = player === 1 ? 2 : 1
-const playersKingPosition = this.getKingPosition(squares, player)
-const canPieceKillPlayersKing = (piece, m) => piece.isMovePossible(playersKingPosition, m, squares)
-return squares.reduce((acc, curr, idx) =>  acc || (curr && (curr.getPlayer() === opponent) && canPieceKillPlayersKing(curr, idx) && true), false)
+const opponent = player === 1 ? 2 : 1;
+const playersKingPosition = this.getKingPosition(squares, player);
+const canPieceKillPlayersKing = (piece, m) => piece.isMovePossible(playersKingPosition, m, squares);
+return squares.reduce((acc, curr, idx) =>  acc || (curr && (curr.getPlayer() === opponent) && canPieceKillPlayersKing(curr, idx) && true), false);
 }
 
   render() {
