@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/pvp-chess-react/static/css/main.6ce444a8.chunk.css",
+    "main.js": "/pvp-chess-react/static/js/main.62570210.chunk.js",
+    "main.js.map": "/pvp-chess-react/static/js/main.62570210.chunk.js.map",
+    "runtime-main.js": "/pvp-chess-react/static/js/runtime-main.c6ee92c9.js",
+    "runtime-main.js.map": "/pvp-chess-react/static/js/runtime-main.c6ee92c9.js.map",
+    "static/js/2.936fd08b.chunk.js": "/pvp-chess-react/static/js/2.936fd08b.chunk.js",
+    "static/js/2.936fd08b.chunk.js.map": "/pvp-chess-react/static/js/2.936fd08b.chunk.js.map",
+    "index.html": "/pvp-chess-react/index.html",
+    "static/css/main.6ce444a8.chunk.css.map": "/pvp-chess-react/static/css/main.6ce444a8.chunk.css.map",
+    "static/js/2.936fd08b.chunk.js.LICENSE.txt": "/pvp-chess-react/static/js/2.936fd08b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c6ee92c9.js",
+    "static/js/2.936fd08b.chunk.js",
+    "static/css/main.6ce444a8.chunk.css",
+    "static/js/main.62570210.chunk.js"
+  ]
+}
