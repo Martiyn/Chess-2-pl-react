@@ -17,7 +17,7 @@ const isSameDiagonal = (src, dest) => {
 }
 
 const isPathClean = (srcToDestPath, squares) => {
-    return  srcToDestPath.reduce((acc, curr) => acc && !squares[curr], true); //need to fix this function, pieces go straight through each other
+    return !srcToDestPath.some(p => squares[p]); //need to fix this function, pieces go straight through each other
    }
 
 module.exports = {
